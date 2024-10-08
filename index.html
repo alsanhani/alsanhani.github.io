@@ -3,167 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Web Page</title>
+    <title>Personal Web Page</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
+
         header {
-            background-color: #007bff;
-            color: white;
-            padding: 20px 0;
+            background-color: #0073e6;
+            padding: 20px;
             text-align: center;
+            color: white;
         }
+
         header h1 {
-            margin: 0;
-            font-size: 36px;
+            font-size: 2.5rem;
         }
-        .container {
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
+
         section {
-            margin: 30px 0;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            color: #007bff;
-            font-size: 28px;
+
+        section h2 {
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        section p, ul {
             margin-bottom: 10px;
         }
+
         ul {
-            list-style: none;
-            padding: 0;
+            list-style-type: none;
         }
+
         ul li {
-            margin: 10px 0;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
         }
+
         ul li i {
-            font-size: 24px;
-            color: #007bff;
             margin-right: 10px;
         }
+
         .icon {
-            width: 40px;
-            height: 40px;
-            background-color: #007bff;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-size: 20px;
+            font-size: 1.5rem;
+            color: #0073e6;
         }
-        .service img {
-            width: 100px;
-            margin-right: 15px;
-            border-radius: 10px;
-            animation: float 3s infinite ease-in-out;
+
+        .service-img {
+            max-width: 100px;
+            margin: 10px;
+            transition: transform 0.3s ease;
         }
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+
+        .service-img:hover {
+            transform: scale(1.1);
         }
-        .service {
-            display: flex;
-            align-items: center;
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Welcome to My Professional Page</h1>
-</header>
+    <header>
+        <h1>My Personal Web Page</h1>
+    </header>
 
-<div class="container">
-
-    <!-- Education Section -->
-    <section id="education">
-        <h2><span class="icon">🎓</span> Education</h2>
-        <p>Bachelor of Computer Science in Sana'a University.</p>
+    <section>
+        <h2>Education</h2>
+        <p><i class="icon">🎓</i>Bachelor of Computer Science, Sana'a University</p>
         <h3>Security Courses:</h3>
         <ul>
-            <li><i class="icon">🔐</i>Course in protecting systems from intrusions.</li>
-            <li><i class="icon">🛡️</i>Course in attack techniques and cyber penetration.</li>
+            <li><i class="icon">🔐</i>Protecting systems from intrusions</li>
+            <li><i class="icon">🛡️</i>Attack techniques and cyber penetration</li>
         </ul>
+
         <h3>Technical Courses:</h3>
         <ul>
-            <li><i class="icon">💻</i>Course in Systems analysis and design.</li>
-            <li><i class="icon">📝</i>Course in the digital content industry.</li>
-            <li><i class="icon">🎨</i>Course in design professions.</li>
+            <li><i class="icon">🖥️</i>Systems analysis and design</li>
+            <li><i class="icon">💻</i>Digital content industry</li>
+            <li><i class="icon">🎨</i>Design professions</li>
         </ul>
+
         <h3>Management Courses:</h3>
         <ul>
-            <li><i class="icon">🚀</i>Course in entrepreneurship.</li>
-            <li><i class="icon">📊</i>Course in accounting.</li>
-            <li><i class="icon">📢</i>Course in e-marketing.</li>
-            <li><i class="icon">📑</i>Course in the business model.</li>
-            <li><i class="icon">🎤</i>Course in Training of Trainers.</li>
+            <li><i class="icon">💼</i>Entrepreneurship</li>
+            <li><i class="icon">📊</i>Accounting</li>
+            <li><i class="icon">🌐</i>E-marketing</li>
+            <li><i class="icon">📋</i>Business model</li>
+            <li><i class="icon">🗣️</i>Training of Trainers</li>
         </ul>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
-        <h2><span class="icon">💼</span> Experience</h2>
+    <section>
+        <h2>Experience</h2>
         <ul>
-            <li><i class="icon">👨‍💻</i>Head of Technical Analysts Group for Public Works Projects (PWP).</li>
-            <li><i class="icon">🛠️</i>Member of the Advanced Accounting and Administrative System Development Team.</li>
-            <li><i class="icon">📈</i>Member of the Project Management and Technical Support System Development Team.</li>
-            <li><i class="icon">🛒</i>Head of a team of developers: Contracting, Sales, and Purchasing System (S.P.E PRO).</li>
-            <li><i class="icon">🛤️</i>Head of Technical Analysts Group of the Road Maintenance Fund (RMF-IU).</li>
-            <li><i class="icon">🛣️</i>Head of Technical Analyst Group for the Rural Access Program Central Management Office (RAPCMO).</li>
-            <li><i class="icon">🏢</i>Head of a team of designers and developers for the Chartered Accountants System - Ministry of Trade and Industry - Yemen.</li>
-            <li><i class="icon">⚙️</i>ERPNEXT systems consultant.</li>
-            <li><i class="icon">💻</i>Service provider at the ICT Department – NRC.</li>
-            <li><i class="icon">🖥️</i>Works exhibition: <a href="https://github.com/alsanhani" target="_blank">github.com/alsanhani</a>.</li>
+            <li><i class="icon">👨‍💼</i>Head of Technical Analysts Group, PWP</li>
+            <li><i class="icon">💻</i>Advanced Accounting and Admin System Development Team Member</li>
+            <li><i class="icon">🛠️</i>Project Management and Tech Support System Dev Team Member</li>
+            <li><i class="icon">💼</i>Head Developer, Contracting, Sales and Purchasing System (S.P.E PRO)</li>
+            <li><i class="icon">🚧</i>Technical Analysts Group Head, RMF-IU Executive Unit</li>
+            <li><i class="icon">🛤️</i>Technical Analyst Group Head, RAPCMO</li>
+            <li><i class="icon">👨‍💻</i>Lead Developer, Chartered Accountants System (Ministry of Trade)</li>
+            <li><i class="icon">💼</i>ERPNext Systems Consultant</li>
+            <li><i class="icon">💻</i>Service Provider, ICT Department – NRC</li>
+            <li><i class="icon">📂</i>Projects on GitHub: <a href="https://github.com/alsanhani" target="_blank">github.com/alsanhani</a></li>
         </ul>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <h2><span class="icon">🛠️</span> Skills</h2>
-        <ul>
-            <li><i class="icon">🌐</i>Web development: Bootstrap(HTML-CSS)- ASP.NET- frappe.</li>
-            <li><i class="icon">📱</i>Mobile programming: JAVA.</li>
-            <li><i class="icon">👨‍💻</i>Programming languages: C++-C#- PHP – PYTHON.</li>
-            <li><i class="icon">📊</i>Analyzing and mining various data (Data Analysis).</li>
-            <li><i class="icon">💾</i>Database management: MYSQL-SQLSERVER.</li>
-            <li><i class="icon">🗂️</i>Version control systems: Git.</li>
-            <li><i class="icon">🔧</i>Network management (Internal-External).</li>
-            <li><i class="icon">📦</i>System backups and disaster recovery management.</li>
-        </ul>
+    <section>
+        <h2>Skills</h2>
+        <div class="skills">
+            <p><i class="icon">🌐</i>Web development: Bootstrap(HTML-CSS), ASP.NET, Frappe</p>
+            <p><i class="icon">📱</i>Mobile programming: JAVA</p>
+            <p><i class="icon">💻</i>Programming languages: C++, C#, PHP, PYTHON</p>
+            <p><i class="icon">📊</i>Data analysis and mining</p>
+            <p><i class="icon">🗃️</i>Database management: MySQL, SQLServer</p>
+            <p><i class="icon">🖥️</i>Version control: Git</p>
+            <p><i class="icon">🛠️</i>Network management (Internal-External)</p>
+        </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2><span class="icon">🛎️</span> My Services</h2>
-        <div class="service">
-            <img src="https://via.placeholder.com/100" alt="Accounting System">
-            <p>Accounting System</p>
+    <section>
+        <h2>My Services</h2>
+        <div class="skills fade-in">
+            <img src="https://via.placeholder.com/100x100.png?text=Accounting" class="service-img" alt="Accounting Service">
+            <img src="https://via.placeholder.com/100x100.png?text=HR" class="service-img" alt="HR Service">
+            <img src="https://via.placeholder.com/100x100.png?text=Warehouse" class="service-img" alt="Warehouse Service">
+            <img src="https://via.placeholder.com/100x100.png?text=Sales" class="service-img" alt="Sales Service">
+            <img src="https://via.placeholder.com/100x100.png?text=Purchasing" class="service-img" alt="Purchasing Service">
+            <img src="https://via.placeholder.com/100x100.png?text=Projects" class="service-img" alt="Project Management Service">
+            <img src="https://via.placeholder.com/100x100.png?text=Support" class="service-img" alt="Technical Support">
+            <img src="https://via.placeholder.com/100x100.png?text=Quality" class="service-img" alt="Quality Management">
         </div>
-        <div class="service">
-            <img src="https://via.placeholder.com/100" alt="Human Resources System">
-            <p>Human Resources System</p>
-        </div>
-        <div class="service">
-            <img src="https://via.placeholder.com/100" alt="Warehouse System">
-            <p>Warehouse System</p>
-        </div>
-        <!-- Add more services as needed -->
     </section>
-
-</div>
 
 </body>
 </html>
