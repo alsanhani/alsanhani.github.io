@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Web Page</title>
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+       <style>
         * {
             margin: 0;
             padding: 0;
@@ -12,60 +14,138 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Fira Code', monospace;
+            background-color: #f7f8fc;
             color: #333;
+            line-height: 1.7;
+            padding: 20px;
         }
 
         header {
-            background-color: #0073e6;
-            padding: 20px;
+            background: linear-gradient(135deg, #0d6efd, #007bff);
+            padding: 40px;
             text-align: center;
             color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        header .summary {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid #007bff;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
         }
 
         section {
-            margin: 20px;
-            padding: 20px;
+            margin: 20px 0;
+            padding: 30px;
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
         }
 
         section h2 {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 1.8rem;
+            color: #007bff;
+            font-weight: bold;
+            position: relative;
         }
 
-        section p, ul {
-            margin-bottom: 10px;
+        section h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #007bff;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
         }
 
         ul {
             list-style-type: none;
+            padding-left: 0;
         }
 
         ul li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
         }
 
         ul li i {
-            margin-right: 10px;
+            margin-right: 12px;
+            color: #007bff;
         }
 
         .icon {
             font-size: 1.5rem;
-            color: #0073e6;
+        }
+         /* Making icons in skills and services blue */
+        .skills i, .services i {
+            color: #0d6efd;
+        }
+
+
+        /* Skills and services sections layout */
+        .skills, .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .contact p {
+            margin-bottom: 15px;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact a:hover {
+            color: #0056b3;
         }
 
         .service-img {
-            max-width: 100px;
+            max-width: 120px;
             margin: 10px;
             transition: transform 0.3s ease;
         }
@@ -74,98 +154,187 @@
             transform: scale(1.1);
         }
 
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 10px;
+        footer {
+            background-color: #0d6efd;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            border-radius: 10px;
         }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 2s forwards;
+        footer p {
+            font-size: 1rem;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header .summary {
+                font-size: 1rem;
+            }
+
+            .profile img {
+                width: 150px;
+                height: 150px;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header .summary {
+                font-size: 0.9rem;
+            }
+
+            .profile img {
+                width: 120px;
+                height: 120px;
+            }
+
+            section h2 {
+                font-size: 1.4rem;
+            }
+
+
+            .contact p {
+                font-size: 0.9rem;
+            }
+
+            footer p {
+                font-size: 0.9rem;
+            }
         }
     </style>
+     
 </head>
 <body>
 
     <header>
-        <h1>My Personal Web Page</h1>
+        <h1>YOUSEF ALI MOHAMMED AL-SANHANI</h1>
+        <p class="summary">Software Engineer with expertise in systems analysis, web development, and database management.</p>
     </header>
 
-    <section>
-        <h2>Education</h2>
-        <p><i class="icon">🎓</i>Bachelor of Computer Science, Sana'a University</p>
-        <h3>Security Courses:</h3>
-        <ul>
-            <li><i class="icon">🔐</i>Protecting systems from intrusions</li>
-            <li><i class="icon">🛡️</i>Attack techniques and cyber penetration</li>
-        </ul>
+    <div class="container">
 
-        <h3>Technical Courses:</h3>
-        <ul>
-            <li><i class="icon">🖥️</i>Systems analysis and design</li>
-            <li><i class="icon">💻</i>Digital content industry</li>
-            <li><i class="icon">🎨</i>Design professions</li>
-        </ul>
+       
 
-        <h3>Management Courses:</h3>
-        <ul>
-            <li><i class="icon">💼</i>Entrepreneurship</li>
-            <li><i class="icon">📊</i>Accounting</li>
-            <li><i class="icon">🌐</i>E-marketing</li>
-            <li><i class="icon">📋</i>Business model</li>
-            <li><i class="icon">🗣️</i>Training of Trainers</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Education</h2>
+            <p><i class="fas fa-graduation-cap icon"></i>Bachelor of Computer Science, Sana'a University</p>
+            <h3>Security Courses:</h3>
+            <ul>
+                <li><i class="fas fa-shield-alt"></i> Protecting systems from intrusions</li>
+                <li><i class="fas fa-lock"></i> Attack techniques and cyber penetration</li>
+            </ul>
 
-    <section>
-        <h2>Experience</h2>
-        <ul>
-            <li><i class="icon">👨‍💼</i>Head of Technical Analysts Group, PWP</li>
-            <li><i class="icon">💻</i>Advanced Accounting and Admin System Development Team Member</li>
-            <li><i class="icon">🛠️</i>Project Management and Tech Support System Dev Team Member</li>
-            <li><i class="icon">💼</i>Head Developer, Contracting, Sales and Purchasing System (S.P.E PRO)</li>
-            <li><i class="icon">🚧</i>Technical Analysts Group Head, RMF-IU Executive Unit</li>
-            <li><i class="icon">🛤️</i>Technical Analyst Group Head, RAPCMO</li>
-            <li><i class="icon">👨‍💻</i>Lead Developer, Chartered Accountants System (Ministry of Trade)</li>
-            <li><i class="icon">💼</i>ERPNext Systems Consultant</li>
-            <li><i class="icon">💻</i>Service Provider, ICT Department – NRC</li>
-            <li><i class="icon">📂</i>Projects on GitHub: <a href="https://github.com/alsanhani" target="_blank">github.com/alsanhani</a></li>
-        </ul>
-    </section>
+            <h3>Technical Courses:</h3>
+            <ul>
+                <li><i class="fas fa-desktop"></i> Systems analysis and design</li>
+                <li><i class="fas fa-code"></i> Digital content industry</li>
+                <li><i class="fas fa-palette"></i> Design professions</li>
+            </ul>
 
-    <section>
-        <h2>Skills</h2>
-        <div class="skills">
-            <p><i class="icon">🌐</i>Web development: Bootstrap(HTML-CSS), ASP.NET, Frappe</p>
-            <p><i class="icon">📱</i>Mobile programming: JAVA</p>
-            <p><i class="icon">💻</i>Programming languages: C++, C#, PHP, PYTHON</p>
-            <p><i class="icon">📊</i>Data analysis and mining</p>
-            <p><i class="icon">🗃️</i>Database management: MySQL, SQLServer</p>
-            <p><i class="icon">🖥️</i>Version control: Git</p>
-            <p><i class="icon">🛠️</i>Network management (Internal-External)</p>
-        </div>
-    </section>
+            <h3>Management Courses:</h3>
+            <ul>
+                <li><i class="fas fa-business-time"></i> Entrepreneurship</li>
+                <li><i class="fas fa-calculator"></i> Accounting</li>
+                <li><i class="fas fa-globe"></i> E-marketing</li>
+                <li><i class="fas fa-sitemap"></i> Business model</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> Training of Trainers</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>My Services</h2>
-        <div class="skills fade-in">
-            <img src="https://via.placeholder.com/100x100.png?text=Accounting" class="service-img" alt="Accounting Service">
-            <img src="https://via.placeholder.com/100x100.png?text=HR" class="service-img" alt="HR Service">
-            <img src="https://via.placeholder.com/100x100.png?text=Warehouse" class="service-img" alt="Warehouse Service">
-            <img src="https://via.placeholder.com/100x100.png?text=Sales" class="service-img" alt="Sales Service">
-            <img src="https://via.placeholder.com/100x100.png?text=Purchasing" class="service-img" alt="Purchasing Service">
-            <img src="https://via.placeholder.com/100x100.png?text=Projects" class="service-img" alt="Project Management Service">
-            <img src="https://via.placeholder.com/100x100.png?text=Support" class="service-img" alt="Technical Support">
-            <img src="https://via.placeholder.com/100x100.png?text=Quality" class="service-img" alt="Quality Management">
-        </div>
-    </section>
+        <section>
+            <h2>Experience</h2>
+            <ul>
+                <li><i class="fas fa-users"></i> Head of Technical Analysts Group, PWP</li>
+                <li><i class="fas fa-laptop-code"></i> Advanced Accounting and Admin System Development Team Member</li>
+                <li><i class="fas fa-project-diagram"></i> Project Management and Tech Support System Dev Team Member</li>
+                <li><i class="fas fa-file-alt"></i> Head Developer, Contracting, Sales and Purchasing System (S.P.E PRO)</li>
+                <li><i class="fas fa-road"></i> Technical Analysts Group Head, RMF-IU Executive Unit</li>
+                <li><i class="fas fa-tools"></i> Technical Analyst Group Head, RAPCMO</li>
+                <li><i class="fas fa-users-cog"></i> Lead Developer, Chartered Accountants System (Ministry of Trade)</li>
+                <li><i class="fas fa-server"></i> ERPNext Systems Consultant</li>
+                <li><i class="fas fa-network-wired"></i> Service Provider, ICT Department – NRC</li>
+                <li><i class="fab fa-github"></i> Projects on GitHub: <a href="https://github.com/alsanhani" target="_blank">github.com/alsanhani</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>My Services</h2>
+            <div class="skills">
+                <p><i class="fas fa-file-invoice"></i> Accounting System</p>
+                <p><i class="fas fa-users"></i> Human Resources System</p>
+                <p><i class="fas fa-warehouse"></i> Warehouse System</p>
+                <p><i class="fas fa-shopping-cart"></i> Sales System</p>
+                <p><i class="fas fa-shopping-bag"></i> Purchasing System</p>
+                <p><i class="fas fa-tasks"></i> Project Management System</p>
+                <p><i class="fas fa-headset"></i> Technical Support System</p>
+                <p><i class="fas fa-check-circle"></i> Quality System</p>
+                <p><i class="fas fa-industry"></i> Factory System</p>
+                <p><i class="fas fa-school"></i> School System</p>
+                <p><i class="fas fa-university"></i> University System</p>
+                <p><i class="fas fa-hospital-alt"></i> Hospital System</p>
+                <p><i class="fas fa-clinic-medical"></i> Clinic System</p>
+                <p><i class="fas fa-pills"></i> Pharmacies System</p>
+                <p><i class="fas fa-utensils"></i> Restaurant System</p>
+                <p><i class="fas fa-hotel"></i> Hotel System</p>
+                <p><i class="fas fa-graduation-cap"></i> Education System</p>
+                <p><i class="fas fa-users-cog"></i> Customer Relationship Management System</p>
+                <p><i class="fas fa-database"></i> Data Analysis System</p>
+                <p><i class="fas fa-tools"></i> Technical and Software Solutions Services</p>
+                <p><i class="fas fa-user-tie"></i> Technical Consulting</p>
+                <p><i class="fas fa-sitemap"></i> Systems Analysis and Design</p>
+                <p><i class="fas fa-mobile-alt"></i> Mobile Application Design</p>
+            </div>
+        </section>
+
+         <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <p><i class="fas fa-code"></i> Web development: Bootstrap(HTML-CSS), ASP.NET, Frappe</p>
+                <p><i class="fas fa-mobile-alt"></i> Mobile programming: JAVA</p>
+                <p><i class="fas fa-database"></i> Database Management: MYSQL, SQLSERVER</p>
+                <p><i class="fas fa-chart-line"></i> Data Analysis and Mining</p>
+                <p><i class="fas fa-network-wired"></i> Network Management (Internal-External)</p>
+                <p><i class="fas fa-code"></i> Programming Languages: C++, C#, PHP, PYTHON</p>
+                <p><i class="fas fa-tasks"></i> Maintain an inventory of all ICT assets (software and hardware)</p>
+                <p><i class="fas fa-project-diagram"></i> Develop, analyze, prioritize, and organize requirement specifications, data mapping, diagrams, and flowcharts for developers</p>
+                <p><i class="fas fa-code-branch"></i> Familiarity with version control (Git)</p>
+            </div>
+        </section>
+
+
+       
+       
+ 
+	
+
+        <section class="contact">
+            <h2>Contact Me</h2>
+             <p><i class="fas fa-phone"></i> Phone: <a href="tel:+123456789">+967 776776807</a></p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:youremail@example.com">alsanhaniyousef@gmail.com</a></p>
+            <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/alsanhani" target="_blank">github.com/alsanhani</a></p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2024 AL-SANHANI. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
