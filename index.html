@@ -222,83 +222,19 @@
      
 </head>
 <body>
-<!-- زر الترجمة -->
-<div id="translate-bar">
-  <button id="translate-btn">🌐 العربية</button>
-</div>
+<div id="google_translate_element"></div>
 
-<style>
-  /* شريط علوي */
-  #translate-bar {
-    background: linear-gradient(90deg, #2c3e50, #34495e); /* تدرج غامق */
-    padding: 12px 20px;
-    text-align: right;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-
-  /* الزر */
-  #translate-btn {
-    background: #ffffff; /* أبيض */
-    color: #2c3e50;      /* خط غامق */
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  #translate-btn:hover {
-    background: #f1f1f1; /* أبيض فاتح عند التمرير */
-  }
-
-  /* إخفاء شعار جوجل */
-  .goog-logo-link, .goog-te-gadget { display: none !important; }
-</style>
-
-<script>
-let currentLang = 'en'; // لغة الصفحة الأساسية = الإنجليزية
-
-document.getElementById("translate-btn").addEventListener("click", function() {
-  if (currentLang === 'en') {
-    changeLanguage('ar');
-    this.textContent = "🌐 English";
-    currentLang = 'ar';
-  } else {
-    changeLanguage('en');
-    this.textContent = "🌐 العربية";
-    currentLang = 'en';
-  }
-});
-
-// دالة لتغيير اللغة بسلاسة
-function changeLanguage(lang) {
-  const iframe = document.querySelector("iframe.goog-te-menu-frame");
-  if (!iframe) return;
-  const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-  const langSelect = innerDoc.querySelector(`.goog-te-menu2 [value="${lang}"]`);
-  if (langSelect) langSelect.click();
-}
-
-// تحميل Google Translate (مخفي)
+<script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
-    {
-      pageLanguage: 'en',   // اللغة الأساسية للصفحة
-      includedLanguages: 'en,ar',
-      autoDisplay: false
-    },
-    'hidden_translate'
+    {pageLanguage: 'en', includedLanguages: 'ar,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+    'google_translate_element'
   );
 }
 </script>
 
-<!-- سكربت Google -->
-<div id="hidden_translate" style="display:none;"></div>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
     <header>
         <h1>YOUSEF ALI MOHAMMED AL-SANHANI</h1>
