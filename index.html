@@ -224,6 +224,58 @@
 <body>
 
     <header>
+		<!-- صندوق الترجمة أعلى الصفحة -->
+<div id="translate-bar">
+  <div id="google_translate_element"></div>
+</div>
+
+<!-- تنسيقات CSS -->
+<style>
+  /* شريط علوي أنيق */
+  #translate-bar {
+    background: linear-gradient(90deg, #2c3e50, #34495e);
+    padding: 10px 20px;
+    text-align: right; /* الترجمة تظهر يمين الصفحة */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    position: sticky; /* يبقى ثابت عند التمرير */
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* إخفاء شعار جوجل */
+  .goog-logo-link { display: none !important; }
+  .goog-te-gadget { color: transparent !important; }
+
+  /* تنسيق القائمة */
+  select.goog-te-combo {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    background-color: #ecf0f1;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  select.goog-te-combo:hover {
+    background-color: #dcdde1;
+  }
+</style>
+
+<!-- كود Google Translate -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {
+      pageLanguage: 'en',          // لغة الصفحة الأساسية
+      includedLanguages: 'ar,en,fr', // اللغات المتاحة
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    },
+    'google_translate_element'
+  );
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
         <h1>YOUSEF ALI MOHAMMED AL-SANHANI</h1>
         <p class="summary">Software Engineer with expertise in Systems analysis, web development, ERPNEXT System , and database management.</p>
     </header>
@@ -335,19 +387,7 @@
     <footer>
         <p>© AL-SANHANI. All rights reserved.</p>
     </footer>
-	<div id="google_translate_element"></div>
-
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'en', includedLanguages: 'ar,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
-    'google_translate_element'
-  );
-}
-</script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+	
 
 </body>
 </html>
