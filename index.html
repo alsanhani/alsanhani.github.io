@@ -222,7 +222,7 @@
      
 </head>
 <body>
-	<!-- زر الترجمة -->
+<!-- زر الترجمة -->
 <div id="translate-bar">
   <button id="translate-btn">🌐 العربية</button>
 </div>
@@ -230,7 +230,7 @@
 <style>
   /* شريط علوي */
   #translate-bar {
-    background: linear-gradient(90deg, #2c3e50, #34495e);
+    background: linear-gradient(90deg, #2c3e50, #34495e); /* تدرج غامق */
     padding: 12px 20px;
     text-align: right;
     position: sticky;
@@ -241,7 +241,8 @@
 
   /* الزر */
   #translate-btn {
-    background: #ecf0f1;
+    background: #ffffff; /* أبيض */
+    color: #2c3e50;      /* خط غامق */
     border: none;
     padding: 8px 16px;
     border-radius: 8px;
@@ -251,36 +252,34 @@
     transition: 0.3s;
   }
   #translate-btn:hover {
-    background: #dcdde1;
+    background: #f1f1f1; /* أبيض فاتح عند التمرير */
   }
+
+  /* إخفاء شعار جوجل */
+  .goog-logo-link, .goog-te-gadget { display: none !important; }
 </style>
 
 <script>
-let currentLang = 'en'; // الصفحة الأساسية: الإنجليزية
+let currentLang = 'en'; // لغة الصفحة الأساسية = الإنجليزية
 
 document.getElementById("translate-btn").addEventListener("click", function() {
   if (currentLang === 'en') {
-    // ترجم للعربية
-    setLanguage('ar');
+    changeLanguage('ar');
     this.textContent = "🌐 English";
     currentLang = 'ar';
   } else {
-    // رجّع للإنجليزية
-    setLanguage('en');
+    changeLanguage('en');
     this.textContent = "🌐 العربية";
     currentLang = 'en';
   }
 });
 
-// دالة تغيير اللغة
-function setLanguage(lang) {
-  var iframe = document.querySelector("iframe.goog-te-menu-frame");
-  if (!iframe) {
-    alert("انتظر ثواني حتى يتم تحميل خدمة الترجمة من Google.");
-    return;
-  }
-  var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-  var langSelect = innerDoc.querySelector(`.goog-te-menu2 [value="${lang}"]`);
+// دالة لتغيير اللغة بسلاسة
+function changeLanguage(lang) {
+  const iframe = document.querySelector("iframe.goog-te-menu-frame");
+  if (!iframe) return;
+  const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+  const langSelect = innerDoc.querySelector(`.goog-te-menu2 [value="${lang}"]`);
   if (langSelect) langSelect.click();
 }
 
@@ -288,9 +287,9 @@ function setLanguage(lang) {
 function googleTranslateElementInit() {
   new google.translate.TranslateElement(
     {
-      pageLanguage: 'en', // اللغة الأساسية للصفحة (إنجليزية)
+      pageLanguage: 'en',   // اللغة الأساسية للصفحة
       includedLanguages: 'en,ar',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      autoDisplay: false
     },
     'hidden_translate'
   );
@@ -300,7 +299,6 @@ function googleTranslateElementInit() {
 <!-- سكربت Google -->
 <div id="hidden_translate" style="display:none;"></div>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 
     <header>
         <h1>YOUSEF ALI MOHAMMED AL-SANHANI</h1>
