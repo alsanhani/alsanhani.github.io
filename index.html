@@ -222,18 +222,39 @@
      
 </head>
 <body>
-<div id="google_translate_element"></div>
 
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'en', includedLanguages: 'ar,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
-    'google_translate_element'
-  );
-}
+	<!-- زر الترجمة -->
+<div id="translate-bar">
+  <button id="translate-btn">🌐 ترجمة الصفحة للعربية</button>
+</div>
+
+<style>
+  /* تنسيق الزر */
+  #translate-bar {
+    text-align: right;
+    padding: 10px;
+  }
+  #translate-btn {
+    background: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  #translate-btn:hover {
+    background: #34495e;
+  }
+</style>
+
+<script>
+document.getElementById("translate-btn").addEventListener("click", function() {
+  // عند الضغط، يعتمد على المتصفح لإظهار شريط الترجمة تلقائيًا
+  location.reload(); // إعادة تحميل الصفحة عادةً تحفز اقتراح الترجمة
+});
 </script>
-
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
     <header>
